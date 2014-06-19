@@ -77,7 +77,7 @@ public class MainActivity extends Activity {
          
         // Get GCM registration id
         final String regId = GCMRegistrar.getRegistrationId(this);
- 
+        
         // Check if regid already presents
         if (regId.equals("")) {
             // Registration is not present, register now with GCM           
@@ -86,7 +86,7 @@ public class MainActivity extends Activity {
             // Device is already registered on GCM
             if (GCMRegistrar.isRegisteredOnServer(this)) {
                 // Skips registration.              
-                Toast.makeText(getApplicationContext(), "Already registered with GCM", Toast.LENGTH_LONG).show();
+                Toast.makeText(getApplicationContext(), regId +"already registered", Toast.LENGTH_LONG).show();
             } else {
                 // Try to register again, but not in the UI thread.
                 // It's also necessary to cancel the thread onDestroy(),

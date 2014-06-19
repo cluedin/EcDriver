@@ -10,7 +10,7 @@
         
          android:id="@+id/lblMessage"
          android:layout_height="wrap_content"
-         android:text="Driver application"
+         android:text="Device id"
          android:layout_marginLeft="10dip"
          android:layout_marginRight="10dip"
          android:layout_marginTop="20dip"/>

@@ -26,6 +26,8 @@
 		//$the_guy = mysql_query("SELECT on_duty FROM gcm_users WHERE on_duty = '$on_duty'") && mysql_query("SELECT base FROM gcm_users WHERE base = '$base'")
 		//or die(mysql_error());
 		
+		
+		
 		if(mysql_query("SELECT on_duty FROM gcm_users WHERE on_duty = '$on_duty'")) {
 		
 		$base = mysql_query("SELECT base FROM gcm_users WHERE on_duty = '$on_duty'") or die(mysql_error()); 

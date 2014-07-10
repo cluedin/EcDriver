@@ -46,6 +46,8 @@ public class MainActivity extends Activity {
          
         cd = new ConnectionDetector(getApplicationContext());
  
+        
+       
         // Check if Internet present
         if (!cd.isConnectingToInternet()) {
             // Internet Connection is not present
@@ -111,7 +113,11 @@ public class MainActivity extends Activity {
                 mRegisterTask.execute(null, null, null);
             }
         }
-    }       
+        Intent j = new Intent(getApplicationContext(), DashBoard.class);
+        startActivity(j);  
+    }    
+    
+
  
     /**
      * Receiving push messages

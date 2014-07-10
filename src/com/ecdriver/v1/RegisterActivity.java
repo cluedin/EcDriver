@@ -1,8 +1,11 @@
 package com.ecdriver.v1;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -63,10 +66,15 @@ public class RegisterActivity extends Activity {
                 String name = txtName.getText().toString();
                 String email = txtEmail.getText().toString();
                  
+                Context context = getApplicationContext();
+                SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(context);
                 // Check if user filled the form
                 if(name.trim().length() > 0 && email.trim().length() > 0){
                     // Launch Main Activity
-                    Intent i = new Intent(getApplicationContext(), MainActivity.class);
+                    Intent i = new Intent(getApplicationContext(), MainActivity.class);                    
+                    SharedPreferences.Editor editor = prefs.edit();
+                    editor.putBoolean("firstTime", true);
+                    editor.commit();
                      
                     // Registering user on our server                   
                     // Sending registraiton details to MainActivity

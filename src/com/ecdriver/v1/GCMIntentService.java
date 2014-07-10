@@ -42,7 +42,10 @@ public final class GCMIntentService extends GCMBaseIntentService {
      * */
     protected void onMessage(Context context, Intent intent) {
         Log.i(TAG, "Received message");
-        String message = intent.getExtras().getString("price");
+        String message = intent.getExtras().getString("id")+ " ";
+		message =  message + intent.getExtras().getString("custName") + " " ;
+		message = message + intent.getExtras().getString("restName") + " ";
+		message = message + intent.getExtras().getString ("orderStatus")+ " ";
          
         CommonUtilities.displayMessage(context, message);
         // notifies user
